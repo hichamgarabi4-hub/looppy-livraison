@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Looppy Livraison</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080E12;color:white;font-family:Arial,sans-serif}
+header{padding:22px;background:#101A20;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:30px;font-weight:bold;color:#19C6A5}
+button{border:0;border-radius:12px;padding:12px;background:#19C6A5;color:#080E12;font-weight:bold}
+main{padding:20px;max-width:650px;margin:auto}
+h2{margin-top:28px}
+.search{width:100%;padding:15px;border-radius:12px;border:1px solid #34434A;background:#172229;color:white;font-size:16px}
+.offer{background:#173D38;padding:20px;border-radius:16px;margin-top:20px}
+.offer strong{color:#19C6A5;font-size:30px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.category{background:#172229;padding:15px 5px;text-align:center;border-radius:12px}
+.restaurant{background:#172229;padding:17px;border-radius:14px;margin:12px 0}
+.restaurant h3{margin:5px 0;color:#19C6A5}
+small{color:#B7C5C8}
+nav{position:sticky;bottom:0;background:#101A20;padding:16px;display:flex;justify-content:space-around}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">looppy.</div>
+<button onclick="changeLang()" id="lang">Français</button>
+</header>
+<main>
+<h2 id="welcome">مرحبا بيك في Looppy 🍔</h2>
+<p id="subtitle">شنوّة تحب تاكل اليوم؟</p>
+<input class="search" id="search" placeholder="فتّش على مطعم ولا أكلة...">
+
+<div class="offer">
+<strong>-20%</strong>
+<h3 id="offerTitle">عرض ترحيبي 🎁</h3>
+<p id="offerText">على أول طلب، حتى 5 دنانير</p>
+</div>
+
+<h2 id="categoriesTitle">الأصناف</h2>
+<div class="categories">
+<div class="category">🍔<p>Burger</p></div>
+<div class="category">🍕<p>Pizza</p></div>
+<div class="category">🍗<p>Poulet</p></div>
+<div class="category">🍰<p>Desserts</p></div>
+</div>
+
+<h2 id="restaurantsTitle">مطاعمنا</h2>
+<div class="restaurant">
+<h3>Restaurant 1</h3>
+<small>🍔 مأكولات سريعة · 30-45 دقيقة</small>
+</div>
+<div class="restaurant">
+<h3>Restaurant 2</h3>
+<small>🍕 بيتزا · 25-40 دقيقة</small>
+</div>
+<p style="color:#19C6A5;text-align:center">🚚 معلوم التوصيل: 7 دنانير</p>
+</main>
+<nav>
+<span>🏠 <small id="home">الرئيسية</small></span>
+<span>❤️ <small id="favorites">المفضلة</small></span>
+<span>🛍️ <small id="orders">طلباتي</small></span>
+<span>👤 <small id="profile">حسابي</small></span>
+</nav>
+<script>
+let french=false;
+function changeLang(){
+french=!french;
+document.documentElement.lang=french?"fr":"ar";
+document.documentElement.dir=french?"ltr":"rtl";
+document.getElementById("lang").innerText=french?"العربية":"Français";
+document.getElementById("welcome").innerText=french?"Bienvenue chez Looppy 🍔":"مرحبا بيك في Looppy 🍔";
+document.getElementById("subtitle").innerText=french?"Qu'est-ce que tu veux manger aujourd'hui ?":"شنوّة تحب تاكل اليوم؟";
+document.getElementById("search").placeholder=french?"Chercher un restaurant ou un plat...":"فتّش على مطعم ولا أكلة...";
+document.getElementById("offerTitle").innerText=french?"Offre de bienvenue 🎁":"عرض ترحيبي 🎁";
+document.getElementById("offerText").innerText=french?"Sur la première commande, jusqu'à 5 DT":"على أول طلب، حتى 5 دنانير";
+document.getElementById("categoriesTitle").innerText=french?"Catégories":"الأصناف";
+document.getElementById("restaurantsTitle").innerText=french?"Nos restaurants":"مطاعمنا";
+document.getElementById("home").innerText=french?"Accueil":"الرئيسية";
+document.getElementById("favorites").innerText=french?"Favoris":"المفضلة";
+document.getElementById("orders").innerText=french?"Commandes":"طلباتي";
+document.getElementById("profile").innerText=french?"Profil":"حسابي";
+}
+</script>
+</body>
+</html>
